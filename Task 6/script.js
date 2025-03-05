@@ -39,8 +39,3 @@ var Potion = /** @class */ (function () {
     };
     return Potion;
 }());
-var elixirOfLife = new Potion([255, 255, 255], 7);
-var invisibilityDraught = new Potion([51, 102, 51], 12);
-var mysteriousMixture = elixirOfLife.mix(invisibilityDraught);
-console.log(mysteriousMixture.color); // [127, 159, 127]
-console.log(mysteriousMixture.volume); // 19
