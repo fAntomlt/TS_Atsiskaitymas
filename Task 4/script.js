@@ -6,5 +6,4 @@ Pvz.:
   "kebabas" --> 1010101
   "a"       --> 1
 -------------------------------------------------------------------------- */
-
-const funkcija = (tekstas: string): string => "10".repeat(tekstas.length).slice(0, tekstas.length);
+var funkcija = function (tekstas) { return "10".repeat(tekstas.length).slice(0, tekstas.length); };
