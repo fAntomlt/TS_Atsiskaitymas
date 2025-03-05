@@ -12,6 +12,8 @@
   min-height: 100vh;
   min-width: calc(100vw - (100vw - 100%));
   background-color: #fec631;
+  display: flex;
+  flex-direction: column;
 }
 
 .headline {
@@ -50,6 +52,39 @@ form {
   cursor: pointer;
   background-color: #000;
   color: #fff;
+}
+
+input[type="number"]{
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  outline: none;
+}
+#output {
+  margin-top: 15px;
+  padding: 10px;
+  width: 50%;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  >p{
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    background: #ffffff;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 5px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
 }
 
 /* Tablet */
