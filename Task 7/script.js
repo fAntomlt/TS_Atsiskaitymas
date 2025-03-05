@@ -8,15 +8,9 @@ Pastaba: Informacija apie komandas bei žaidėjus turi turėti bent minimalų st
 var ENDPOINT = 'NBA.json';
 window.onload = function () {
     fetch(ENDPOINT)
-        .then(function (response) {
-        return response.json();
-    })
-        .then(function (data) {
-        renderTeams(data.teams);
-    })
-        .catch(function (error) {
-        console.error("Error:", error);
-    });
+        .then(function (response) { return response.json(); })
+        .then(function (data) { return renderTeams(data.teams); })
+        .catch(function (error) { return console.error("Error:", error); });
 };
 function renderTeams(teams) {
     var output = document.querySelector("#output");

@@ -8,27 +8,33 @@ Pastaba: Informacija apie komandas bei žaidėjus turi turėti bent minimalų st
 
 const ENDPOINT = 'NBA.json';
 
-window.onload = function () { //Naudojau window.onload, nes minejai, kad domcontentloaded pasenes labai
-    fetch(ENDPOINT)
-    .then(response => {
-          return response.json()
-        })
-        .then(data => {
-          renderTeams(data.teams)
-        })
-        .catch(error => {
-          console.error("Error:", error)
-        })
-    };
+type Team = {
+  id: number;
+  name: string;
+  players: Player[];
+};
+
+type Player = {
+  firstName: string;
+  lastName: string;
+  googleSearch: string;
+};
+
+window.onload = function (): void {
+  fetch(ENDPOINT)
+    .then((response: Response) => response.json())
+    .then((data: { teams: Team[] }) => renderTeams(data.teams))
+    .catch((error: Error) => console.error("Error:", error));
+};
   
-  function renderTeams(teams){
-    const output = document.querySelector("#output")
+  function renderTeams(teams: Team[]): void{
+    const output = document.querySelector("#output") as HTMLElement;
     if(!output) return;
     while(output.firstChild){
       output.removeChild(output.firstChild)
     }
   
-    teams.forEach((team) => {
+    teams.forEach((team: Team) => {
         const teamCard = document.createElement("div")
         teamCard.className = "team-card"
       
@@ -39,7 +45,7 @@ window.onload = function () { //Naudojau window.onload, nes minejai, kad domcont
         const playersContainer = document.createElement("div")
         playersContainer.className = "players-container"
   
-    team.players.forEach((player) => {
+    team.players.forEach((player: Player) => {
         const playerCard = document.createElement("div")
         playerCard.className = "player-card"
         
